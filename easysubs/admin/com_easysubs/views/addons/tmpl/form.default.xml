@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+	* @package Flycart
+	* @subpackage Core
+	* @copyright Copyright (c)2013-2018 Ramesh Elamathi
+	* @license GNU General Public License version 2, or later
+	
+ -->
+<form type="browse" show_header="1" show_filters="1"
+	show_pagination="1" norows_placeholder="COM_FLYCART_COMMON_NORECORDS">
+	
+	<headerset>		
+		<header name="easysubs_addon_id" type="rowselect" tdwidth="20" 
+		label="COM_EASYSUBS_ADDON_ID"
+		/>
+		<header name="add_name" type="fieldsearchable"
+			sortable="true" label="COM_EASYSUBS_ADDON_NAME"
+			/>
+		
+		<header name="charge_type"  filterclass="input-small"
+			sortable="true"
+			label="COM_EASYSUBS_SUBSCRIPTION_ADDON_PRICE"
+			/>
+	
+		
+		<header name="period"  filterclass="input-small"
+			sortable="true"
+			label="COM_EASYSUBS_SUBSCRIPTION_PLAN_PERIOD"
+			/>
+		<header name="period_unit"  filterclass="input-small"
+			sortable="true"
+			label="COM_EASYSUBS_PERIODUNIT_PERIOD_UNIT"
+			/>
+		<header name="addon_status"  filterclass="input-small"
+			sortable="true"
+			label="COM_EASYSUBS_SUBSCRIPTION_PLAN_STATUS"
+			/>
+		<header name="price"  filterclass="input-small"
+			sortable="true"
+			label="COM_EASYSUBS_SUBSCRIPTION_ADDON_PRICE"
+			/>
+			
+		<header name="enabled" type="published" sortable="true"
+			tdwidth="8%" />
+	</headerset>
+	
+	<fieldset name="items">		
+		<field name="flycart_addon_id" type="selectrow" />
+		
+		<field name="addon_name" type="text" show_link="true"
+			url="index.php?option=com_easysubs&amp;view=addon&amp;id=[ITEM:ID]" />
+		
+		<field name="charge_type" type="text" />
+		
+		<field name="period" type="text" />
+		
+		<field name="period_unit" type="text" />
+		
+		<field name="addon_status" type="text" />
+		
+		<field name="price" type="text" />
+		
+		<field name="enabled" type="published" />
+	</fieldset>
+</form>

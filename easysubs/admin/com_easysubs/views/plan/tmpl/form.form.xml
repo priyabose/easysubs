@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+*  @package     Easysubs
+*  @subpackage	 Core
+*  @copyright   Copyright Themeparrot(c)2013-2018 Ramesh Elamathi
+*  @license     GNU General Public License version 2, or later
+        
+        Items view form file
+-->
+<form validate="true" serverside_validate="true">
+        <fieldset name="basic_information"
+                label="COM_EASYSUBS_PLAN_GENERAL"
+        >     
+             
+                <field name="plan_title" type="text"
+                        label="COM_EASYSUBS_PLAN_TITLE"
+                        class="input-xlarge"
+                        required="true"
+                /> 
+                <field name="product_id" type="sql" id="easysubs_product_id" label="COM_EASYSUBS_PRODUCT_TITLE" 
+		 		query="SELECT * FROM #__easysubs_products"
+				key_field="easysubs_product_id" value_field="product_title"
+				/>
+				
+                <field name="invoice_name" type="text"
+                        label="COM_EASYSUBS_PLAN_INVOICE_NAME"
+                        class="input-xlarge"
+                        required="true"
+                /> 
+                <field name="plan_desc" type="textarea"
+                        label="COM_EASYSUBS_PLAN_DESC"
+                        class="input-xlarge"
+                        required="true"
+                /> 
+                <field name="price" type="text"
+                        label="COM_EASYSUBS_PLAN_PRICE"
+                        class="input-xlarge"
+                        required="true"
+                /> 
+                <field name="period" type="text"
+                        label="COM_EASYSUBS_PLAN_PERIOD"
+                        class="input-xlarge"
+                        required="true"
+                /> 
+                <field name="period_unit" type="sql"
+						query="SELECT * FROM #__easysubs_periodunits"
+						key_field="period_unit"
+						value_field="display_name"
+                        label="COM_EASYSUBS_PLAN_PLAN_PERIOD_ID"
+                        class="input-xlarge"
+                        required="true"
+                />
+                 <field name="plan_status" type="sql" id="easysubs_status_id" label="COM_EASYSUBS_STATUS_NAME" 
+		 		query="SELECT * FROM #__easysubs_statuses"
+				key_field="plan_status" value_field="plan_status"
+				/>	
+		                
+	          <field name="enabled" type="radio" label="JSTATUS"
+		                        labelclass="flycart-label"
+		                        class="btn-group"
+		                        filter="intval" size="1" default="1"
+		                >
+		                        <option value="1">COM_EASYSUBS_ENABLE</option>
+		                        <option value="0">COM_EASYSUBS_DISABLE</option>
+		                </field>
+		        
+                
+        </fieldset>     
+</form>

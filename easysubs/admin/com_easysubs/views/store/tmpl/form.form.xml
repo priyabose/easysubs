@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+	* @package Flycart
+	* @subpackage Core 
+	* @copyright Copyright (c)2013-2018 Ramesh Elamathi 
+	* @license GNU General Public License version 2, or later
+	 
+	Items view form file
+ -->
+ <form validate="true" serverside_validate="true">
+	<fieldset name="basic_information" label="COM_FLYCART_STORES_GROUP_BASIC"
+		class="span5 pull-left" >
+		<field name="store_name" type="text" label="COM_FLYCART_STORE_NAME"
+			required="true" />
+		<field name="store_invoice_prefix" type="text" label="COM_FLYCART_INVOICE_PREFIX" />
+		
+		 <field name="default_orderstatus" type="sql" id="flycart_order_status_id" label="COM_FLYCART_ORDER_STATUS" 
+		 		query="SELECT * FROM #__flycart_orderstatuses"
+				key_field="flycart_orderstatus_id" value_field="order_name"
+		 />	
+		
+		<field name="address_1" type="text" label="COM_FLYCART_ADDRESS_1" />
+		<field name="address_2" type="text" label="COM_FLYCART_ADDRESS_2" />
+		<field name="city" type="text" label="COM_FLYCART_CITY" />
+		<field name="postalcode" type="text" label="COM_FLYCART_POSTALCODE" />
+		
+		
+		<field name="country_id" type="list" id="flycart_country_id"
+			source_file="admin://components/com_flycart/helpers/select.php"
+			source_class="FlycartHelperSelect" source_method="getCountries"
+			sortable="true" tdwidth="15%"
+			show_link="true"
+			url="index.php?option=com_flycart&amp;view=store&amp;id=[ITEM:ID]"
+			label="COM_FLYCART_COUNTRY_NAME"			
+		/>
+		
+		 <field name="zone_id" type="sql" id="flycart_zone_id" label="COM_FLYCART_ZONE_NAME" 
+		 		query="SELECT * FROM #__flycart_zones"
+				key_field="flycart_zone_id" value_field="zone_name"
+		 />	
+		
+		<field name="enabled" type="list" label="JSTATUS" labelclass="flycart-label"
+			description="JFIELD_PUBLISHED_DESC" class="inputbox" filter="intval"
+			size="1" default="1">
+			<option value="1">JPUBLISHED</option>
+			<option value="0">JUNPUBLISHED</option>
+		</field>
+		
+		<field name="flycart_address_id" type="hidden" emptylabel="1"/>
+	</fieldset>
+	
+	<fieldset name="more_information" label="COM_FLYCART_ITEMS_GROUP_MORE" class="span6 pull-left">
+		
+		<field name="store_price_includes_tax" type="list" label="COM_FLYCART_SET_PRICE_TAX" labelclass="flycart-label"
+			description="JFIELD_PUBLISHED_DESC" class="inputbox" filter="intval"
+			size="1" default="1">
+			<option value="1">COM_FLYCART_INCLUDE_TAX</option>
+			<option value="0">COM_FLYCART_EXCLUDE_TAX</option>
+		</field>
+		
+		<field name="store_tax_default" type="list" label="COM_FLYCART_SET_PRICE_TAX" labelclass="flycart-label"
+			description="JFIELD_PUBLISHED_DESC" class="inputbox" filter="intval"
+			size="1" default="1">
+			<option value="shipping">COM_FLYCART_SHIPPING_ADDRESS</option>
+			<option value="billing">COM_FLYCART_BILLING_ADDRESS</option>
+		</field>
+		
+		
+		
+		
+		<field name="list_layout_id" type="sql" query="SELECT flycart_layout_id , layout_name FROM #__flycart_layouts where layout_type='list'" multiple="single" 
+			key_field="flycart_layout_id" value_field="layout_name" class="inputbox" label="COM_FLYCART_STORE_LIST_LAYOUT" description="List of Products" required="true" />
+		
+		<field name="product_layout_id" type="sql" query="SELECT flycart_layout_id , layout_name FROM #__flycart_layouts where layout_type='product'" multiple="single" 
+			key_field="flycart_layout_id" value_field="layout_name" class="inputbox" label="COM_FLYCART_STORE_PRODUCT_LAYOUT" description="Single Product" required="true" />
+		
+		
+		<field name="store_currency" type="list"  
+			source_file="admin://components/com_flycart/helpers/select.php"
+			source_class="FlycartHelperSelect" 
+			source_method="getCurrencies"			
+			label="COM_FLYCART_CURRENCY_TITLE"
+		/>
+		
+		<field name="store_desc" type="editor" label="COM_FLYCART_STORE_DESC"
+			filter="JComponentHelper::filterText" buttons="true" class="input-xlarge"
+			required="true" />
+		
+		
+		
+		
+	
+	</fieldset>
+</form>

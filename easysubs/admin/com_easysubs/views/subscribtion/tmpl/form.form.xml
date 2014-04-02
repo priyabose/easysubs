@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+*  @package     Flycart
+*  @subpackage	 Core
+*  @copyright   Copyright (c)2013-2018 Ramesh Elamathi
+*  @license     GNU General Public License version 2, or later
+        
+        Items view form file
+-->
+<form validate="true" serverside_validate="true">
+        <fieldset name="basic_information" class="span6"
+                label="COM_EASYSUBS_SUBSCRIPTION_GROUP_BASIC"
+        >
+        
+       <field name="plan_id" type="list" id="flycart_plan_id"
+			source_file="admin://components/com_easysubs/helpers/select.php"
+			source_class="EasysubsHelperSelect" source_method="getPlans"
+			sortable="true" tdwidth="15%"
+			show_link="true"
+			url="index.php?option=com_easysubs&amp;view=subscribtion&amp;id=[ITEM:ID]"
+			label="COM_EASYSUBS_SUBSCRIPTION_NAME"			
+		/>
+		
+		 <field name="status" type="sql" id="easysubs_status_id" label="COM_EASYSUBS_STATUS_NAME" 
+		 		query="SELECT * FROM #__easysubs_statuses"
+				key_field="easysubs_status_id" value_field="plan_status"
+		 />	
+		
+                
+                <field name="plan_quantity" type="text"
+                        label="COM_EASYSUBS_SUBSCRIPTION_PLAN_QUNATITY"
+                        class="input"
+                        required="true"
+                />
+                
+              <field name="trail_start" type="calendar"
+                		label="COM_EASYSUBS_SUBSCRIPTION_TRAIL_START"
+                        class="input"
+                        required="true"
+                />
+                 <field name="trail_end" type="calendar"
+                		label="COM_EASYSUBS_SUBSCRIPTION_TRAIL_END"
+                        class="input"
+                        required="true"
+                /> 
+				 <field name="current_term_start" type="calendar"
+                		label="COM_EASYSUBS_SUBSCRIPTION_CURRENT_TERM_START"
+                        class="input"
+                        required="true"
+                /> 
+               </fieldset>
+              <fieldset name="information" class="span6"
+                label="COM_EASYSUBS_SUBSCRIPTION_EXTRA_INFORMATION">
+
+				<field name="current_term_end" type="calendar"
+                		label="COM_EASYSUBS_SUBSCRIPTION_CURRENT_TERM_END"
+                        class="input"
+                        required="true"
+                /> 
+
+			<field name="created_at" type="calendar"
+                		label="COM_EASYSUBS_SUBSCRIPTION_CREATED_AT"
+                        class="input"
+                        required="true"
+                /> 
+            <field name="started_at" type="calendar"
+                		label="COM_EASYSUBS_SUBSCRIPTION_STARTED_AT"                        class="input"
+                        required="true"
+                /> 
+               <field name="due_invoices_count" type="text"
+                		label="COM_EASYSUBS_SUBSCRIPTION_DUE_INVOICES_COUNT"
+                        class="input"
+                        required="true"
+                /> 
+			 <field name="object" type="text"
+                		label="COM_EASYSUBS_SUBSCRIPTION_OBJECT"
+                        class="input"
+                        required="true"
+                />
+                <field name="enabled" type="list" label="JSTATUS"
+                        labelclass="flycart-label"
+                        description="JFIELD_PUBLISHED_DESC" class="inputbox"
+                        filter="intval" size="1" default="1"
+                >
+                        <option value="1">JPUBLISHED</option>
+                        <option value="0">JUNPUBLISHED</option>
+                </field>
+        </fieldset>     
+</form>

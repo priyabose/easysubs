@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="3.0" method="upgrade">
+	<name>COM_EASYSUBS</name>
+	<creationDate>Feb 2014</creationDate>
+	<author>GokilaPriya Bose</author>
+	<authorEmail>support@weblogicxindia.com</authorEmail>
+	<authorUrl>http://weblogicxindia.com</authorUrl>
+	<copyright>Copyright (c) eweblogicx.org. All rights reserved.</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<version>1.1.0</version>
+	<description>COM_EASYSUBS_COMPONENT_DESCRIPTION</description>
+	<scriptfile>script.flycart.php</scriptfile>
+	<install>
+        <sql>
+            <file driver="mysql" charset="utf8">install.mysql.sql</file>
+        </sql>
+    </install>
+    <uninstall>
+        <sql>
+            <file driver="mysql" charset="utf8">uninstall.mysql.sql</file>
+        </sql>
+    </uninstall>
+	<files folder="site/com_easysubs">
+		<filename>index.html</filename>
+		<filename>easysubs.php</filename>		
+		<folder>models</folder>
+		<folder>views</folder>
+		<folder>controllers</folder>		
+	</files>
+	<languages folder="site/language">
+		<language tag="en-GB">en-GB.com_easysubs.ini</language>
+	</languages>
+	<media destination="easysubs" folder="media/easysubs">
+		<folder>image</folder>
+	</media>
+	<administration>
+		<menu>COM_EASYSUBS</menu>
+		<files folder="admin/com_easysubs">
+			<filename>index.html</filename>
+			<filename>easysubs.php</filename>	
+			<filename>toolbar.php</filename>	
+			<filename>install.mysql.sql</filename>
+			<filename>uninstall.mysql.sql</filename>			
+			<filename>access.xml</filename>			
+			<filename>fof.xml</filename>						
+			<folder>models</folder>
+			<folder>views</folder>
+			<folder>controllers</folder>			
+		</files>
+		<languages folder="admin/language">
+			<language tag="en-GB">en-GB.com_easysubs.ini</language>
+			<language tag="en-GB">en-GB.com_easysubs.sys.ini</language>		
+		</languages>
+	</administration>
+  
+</extension>

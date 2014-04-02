@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+*  @package     Easysubs
+*  @subpackage	 Core
+*  @copyright   Copyright Themeparrot(c)2013-2018 Ramesh Elamathi
+*  @license     GNU General Public License version 2, or later
+        
+        Items view form file
+-->
+<form validate="true" serverside_validate="true">
+        <fieldset name="basic_information"
+                label="COM_EASYSUBS_PRODUCT_GENERAL"
+        >     
+             
+                <field name="product_title" type="text"
+                        label="COM_EASYSUBS_PRODUCT_TITLE"
+                        class="input-xlarge"
+                        required="true"
+                /> 
+                <field name="product_desc" type="textarea"
+                        label="COM_EASYSUBS_PRODUCT_DESC"
+                        class="input-xlarge"
+                        required="true"
+                /> 	
+		
+                <field name="display_name" type="text"
+                        label="COM_EASYSUBS_PRODUCT_DISPLAY_NAME"
+                        class="input-xlarge"
+                        required="true"
+                />                
+		                
+	          <field name="enabled" type="radio" label="JSTATUS"
+		                        labelclass="flycart-label"
+		                        class="btn-group"
+		                        filter="intval" size="1" default="1"
+		                >
+		                        <option value="1">COM_EASYSUBS_ENABLE</option>
+		                        <option value="0">COM_EASYSUBS_DISABLE</option>
+		                </field>
+		        
+                
+        </fieldset>     
+</form>

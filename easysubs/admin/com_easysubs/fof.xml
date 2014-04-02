@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fof>
+      <frontend>
+		<!-- Dispatcher options -->
+		<dispatcher>
+			<option name="default_view">plans</option>
+		</dispatcher>
+		<!-- Options common for all views -->
+		<view name="*">
+			<!-- Per-task ACL settings. The star task sets the default ACL privileges for all tasks. -->
+			<acl>
+				<task name="*">true</task>
+			</acl>
+		</view>
+	</frontend>
+</fof>

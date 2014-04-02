@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+*  @package     Flycart
+*  @subpackage	 Core
+*  @copyright   Copyright (c)2013-2018 Ramesh Elamathi
+*  @license     GNU General Public License version 2, or later
+        
+        Items view form file
+-->
+<form type="browse" show_header="1" show_filters="1"
+	show_pagination="1" norows_placeholder="COM_EASYSUBS_COMMON_NORECORDS">
+	
+	<headerset>		
+		<header name="easysubs_status_id" type="rowselect" tdwidth="20" 
+		label="COM_EASYSUBS_COUNTRY_ID"
+		/>
+		<header name="plan_status" type="fieldsearchable"
+			sortable="true" label="COM_EASYSUBS_PLAN_STATUS"
+			/>
+			
+		<header name="enabled" type="published" sortable="true"
+			tdwidth="8%" />
+	</headerset>
+	
+	<fieldset name="items">		
+		<field name="easysubs_status_id" type="selectrow" />
+		
+		<field name="plan_status" type="text" show_link="true"
+			url="index.php?option=com_easysubs&amp;view=status&amp;id=[ITEM:ID]" />
+			
+		<field name="enabled" type="published" />
+	</fieldset>
+</form>

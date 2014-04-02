@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+	* @package Flycart
+	* @subpackage Core
+	* @copyright Copyright (c)2013-2018 Ramesh Elamathi
+	* @license GNU General Public License version 2, or later
+	
+ -->
+
+<form type="browse" show_header="1" show_filters="1"
+	show_pagination="1" norows_placeholder="COM_FLYCART_COMMON_NORECORDS">
+	
+	<headerset>
+		<header name="ordering" type="ordering" sortable="true"
+			tdwidth="10%" />
+		<header name="flycart_store_id" type="rowselect" tdwidth="20" 
+		label="COM_FLYCART_STORE_ID"
+		/>
+		<header name="store_name" type="fieldsearchable"
+			sortable="true" 
+			label="COM_FLYCART_STORE_NAME"
+			 />
+		<header name="store_desc" type="field" sortable="true" 
+			label="COM_FLYCART_STORE_DESC"
+		/>
+		<header name="enabled" type="published" sortable="true"
+			tdwidth="8%" />
+	</headerset>
+	
+	<fieldset name="items">
+		<field name="ordering" type="ordering" labelclass="order"/>
+		<field name="store_id" type="selectrow" />
+		<field name="store_name" type="text" show_link="true"
+			url="index.php?option=com_flycart&amp;view=store&amp;id=[ITEM:ID]" />
+		<field name="store_desc" type="text" />
+		<field name="enabled" type="published" />
+	</fieldset>
+</form>

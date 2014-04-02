@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+*  @package     Flycart
+*  @subpackage	 Core
+*  @copyright   Copyright (c)2013-2018 Ramesh Elamathi
+*  @license     GNU General Public License version 2, or later
+        
+        Items view form file
+-->
+<form validate="true" serverside_validate="true">
+        <fieldset name="basic_information"
+                label="COM_EASYSUBS_STATUS_GROUP_BASIC"
+        >
+                <field name="plan_status" type="text"
+                        label="COM_EASYSUBS_STATUS_PLAN_STATUS"
+                        class="input-xlarge"
+                        required="true"
+                />
+
+                <field name="enabled" type="list" label="JSTATUS"
+                        labelclass="flycart-label"
+                        description="JFIELD_PUBLISHED_DESC" class="inputbox"
+                        filter="intval" size="1" default="1"
+                >
+                        <option value="1">JPUBLISHED</option>
+                        <option value="0">JUNPUBLISHED</option>
+                </field>
+        </fieldset>     
+</form>

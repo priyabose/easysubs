@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+*  @package     Flycart
+*  @subpackage	 Core
+*  @copyright   Copyright (c)2013-2018 Ramesh Elamathi
+*  @license     GNU General Public License version 2, or later
+        
+        Items view form file
+-->
+<form validate="true" serverside_validate="true">
+        <fieldset name="basic_information"
+                label="COM_FLYCART_CURRENCY_GROUP_BASIC"
+        >
+                
+                <field name="currency_title" type="text"
+                        label="COM_FLYCART_CURRENCY_TITLE"
+                        class="input-xlarge"
+                        required="true"
+                />
+                
+                <field name="currency_code" type="text"
+                        label="COM_FLYCART_CURRENCY_CODE"
+                        class="input-xlarge"
+                        required="true"
+                />
+                
+                <field name="currency_symbol" type="text"
+                        label="COM_FLYCART_CURRENCY_SYMBOL"
+                        class="input-xlarge"
+                        required="true"
+                />
+                
+                <field name="currency_position" type="list"
+                        label="COM_FLYCART_CURRENCY_POSITION"
+                        class="input-xlarge" default="front"
+                        required="true"
+                >
+                   <option value="front">COM_FLYCART_CURRENCY_FRONT</option>
+                   <option value="end">COM_FLYCART_CURRENCY_END</option>
+                </field>
+                
+                <field name="currency_decimal_place" type="integer"
+                        label="COM_FLYCART_CURRENCY_DECIMAL_PLACE"
+                        class="input-xlarge"
+                        required="true"
+                        first="1" last="10" step="1" default="2"
+                />
+                
+                <field name="currency_decimal_separator" type="text"
+                        label="COM_FLYCART_CURRENCY_DECIMAL_SEPERATOR"
+                        class="input-xlarge" default="."
+                />
+                
+                <field name="currency_thousand_separator" type="text"
+                        label="COM_FLYCART_CURRENCY_THOUSAND_SEPERATOR"
+                        class="input-xlarge" default=","
+                />
+                
+                  <field name="currency_value" type="text"
+                        label="COM_FLYCART_CURRENCY_VALUE"
+                        class="input-xlarge"
+                        required="true"
+                />
+                
+                <field name="enabled" type="list" label="JSTATUS"
+                        labelclass="flycart-label"
+                        description="JFIELD_PUBLISHED_DESC" class="inputbox"
+                        filter="intval" size="1" default="1"
+                >
+                        <option value="1">JPUBLISHED</option>
+                        <option value="0">JUNPUBLISHED</option>
+                </field>
+        </fieldset>     
+</form>
